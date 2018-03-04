@@ -46,7 +46,7 @@ const PeopleSchema = new Schema({
         required: true
     },
     bio: String,
-    publications:{type: String, default: null},
+    publications:{type: String, default: ''},
     display: {
         type: Boolean,
         default: true
