@@ -32,7 +32,7 @@ exports.default = {
         });
         // setup email data with unicode symbols
         let mailOptions = {
-            from: '"ICSTK Contact" <support@icstk.org>',
+            from: '"ISCUW Contact" <support@iscuw.org>',
             to: index_1.default.EMAIL_RECIEVER,
             subject: req.body.subject,
             html: output // html body
