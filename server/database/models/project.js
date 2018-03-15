@@ -11,7 +11,7 @@ const ProjectSchema = new Schema({
     title: String,
     goal: String,
     status: { type: String, default: 'No Status Updates' },
-    priority: { type: String, default: 'Low' },
+    priority: { type: Number, default: 3 },
     updated: { type: Date, default: Date.now },
     team: [
         {
@@ -19,6 +19,7 @@ const ProjectSchema = new Schema({
             ref: 'People'
         }
     ],
+    editor: String
 });
 ProjectSchema.plugin(AutoIncrement, { inc_field: 'projectId' });
 const Project = mongoose.model('Project', ProjectSchema);

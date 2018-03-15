@@ -4,7 +4,7 @@ const project_1 = require("../database/models/project");
 exports.default = {
     allProjects(req, res, next) {
         project_1.Project.find({})
-            .sort({ updated: -1 })
+            .sort({ priority: 1 })
             .populate('team')
             .then((results) => res.json(results))
             .catch(next);
