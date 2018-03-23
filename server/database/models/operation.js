@@ -43,6 +43,7 @@ const OperationSchema = new Schema({
     type: {
         weaponTypes: [{
                 term: String,
+                weaponDetail: { type: String, default: 'N/A' },
                 clear: Boolean,
                 primary: { type: Boolean, default: true }
             }],
