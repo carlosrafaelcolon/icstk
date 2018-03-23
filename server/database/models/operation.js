@@ -54,7 +54,7 @@ const OperationSchema = new Schema({
             }],
     },
     objects: [{
-            type: { type: String, default: 'Other' },
+            type: { type: String, default: 'Unknown' },
             state: { type: String, default: 'Unclear' },
             clear: { type: Boolean, default: false },
             primary: { type: Boolean, default: true }
