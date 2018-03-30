@@ -26,14 +26,17 @@ const index_1 = require("./config/index");
  | MongoDB
  |--------------------------------------
  */
-mongoose.Promise = bluebird;
-mongoose.connect(index_1.default.mongoUrl).then(() => {
-    console.log('Database Connected');
-    /** ready to use. The `mongoose.connect()` promise resolves to undefined. */
-}).catch(err => {
-    console.log('MongoDB connection error. Please make sure MongoDB is running. ' + err);
-    // process.exit();
-});
+const options = {
+    dbName: index_1.default.mongoDB,
+    auth: { "authSource": index_1.default.mongoAuth },
+    user: index_1.default.mongoUser,
+    pass: index_1.default.mongoPWD,
+    promiseLibrary: bluebird
+  };
+  mongoose.connect('mongodb://127.0.0.1:27017', options).then(
+    () => { console.log(`Successfully connected to ${options.dbName} database`); },
+    err => { console.log(`Error connecting to ${options.dbName} database`); }
+  );
 /*
  |--------------------------------------
  | Express configuration
