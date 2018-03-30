@@ -10,5 +10,9 @@ exports.default = {
     EMAIL_USER: process.env.EMAIL_USER,
     EMAIL_PASS: process.env.EMAIL_PASS,
     EMAIL_RECIEVER: process.env.EMAIL_RECIEVER,
-    mongoUrl: process.env.DB_CONN
+    mongoUrl: process.env.DB_CONN,
+    mongoPWD: process.env.MONGO_PWD,
+    mongoUser: process.env.MONGO_USER,
+    mongoDB: process.env.MONGO_DB,
+    mongoAuth: process.env.MONGO_AUTH
 };
